@@ -3,7 +3,7 @@ WORKDIR /app
 RUN yarn add graphql-yoga
 COPY index.js .
 
-FROM node:latest
+FROM gcr.io/distroless/nodejs
 WORKDIR /app
 COPY --from=base /app /app
-CMD [ "node", "." ]
+CMD [ "index.js" ]
